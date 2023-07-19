@@ -1,38 +1,183 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .App {
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  background-color: #f5f6fa;
+}
+
+/* Navbar */
+
+.navbar {
+  height: 60px;
+  width: 100%;
+  background-color: #273c75;
+  position: fixed;
+  top: 0;
+  color: #f5f6fa;
+  display: flex;
+  align-items: center;
+  font-family: "Sofia", sans-serif;
+  padding: 0 10px;
+}
+
+/* Album data */
+
+.albumdata {
+  margin: 10px;
+  padding: 70px 20px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 300px);
+  justify-content: center;
+}
+
+.albumdata_list {
+  margin: 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.update-delete-div {
+  display: flex;
+  justify-content: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Update menu */
+
+.update-menu {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 300px;
+  width: 450px;
+  background-color: white;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 20px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  border-radius: 15px;
+}
+
+.update-button {
+  background-color: #1877f2;
+  padding: 10px;
+  font-weight: 600;
+  color: aliceblue;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.delete {
+  background-color: red;
+  margin-left: 10px;
+}
+
+.update-menu > input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 2px solid #273c75;
+  outline: none;
+  color: #718093;
+}
+
+.cancel-button {
+  position: fixed;
+  top: 8%;
+  left: 94%;
+  height: 10%;
+  width: 7%;
+  color: #fff;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: red;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.add-album {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  border: 0;
+  background-color: transparent;
+  color: #fff;
+  font-family: "Sofia", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.add-album:hover {
+  border-bottom: 3px solid #fff;
+}
+
+.add-album-form {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-weight: 700;
+}
+
+.album {
+  width: 150px;
+  margin-bottom: -20px;
+}
+
+.add-album-form > button {
+  background-color: green;
+  border-radius: 10px;
+  border: none;
   color: white;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
-}
+/* Responsiveness */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Medium size screens */
+@media all and (min-width: 801px) and (max-width: 950px) {
+  .albumdata {
+    grid-template-columns: repeat(2, 320px);
+    column-gap: 80px;
+    justify-content: center;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* Small size screens */
+@media all and (min-width: 20px) and (max-width: 800px) {
+  .albumdata {
+    grid-template-columns: repeat(1, 280px);
+    justify-content: center;
   }
 }
